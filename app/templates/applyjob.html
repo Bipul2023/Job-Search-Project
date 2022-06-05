@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<!-- Start home -->
+<section class="bg-half page-next-level">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="text-center text-white">
+                    <h4 class="text-uppercase title mb-4">Job Application Form</h4>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end home -->
+
+<!-- POST A JOB START -->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="rounded shadow bg-white p-4">
+                    <div class="custom-form">
+                        <div id="message3"></div>
+                        <form method="post" action="/applyjob/{{ request.session.id }}" enctype="multipart/form-data" name="contact-form" id="contact-form3">
+                            {% csrf_token %}
+                            <h4 class="text-dark mb-3">Job Application Form</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">Firstname</label>
+                                        <div class="form-button">
+                                            <input type="text"  name="firstname" value="{{ can.firstname }}" class="form-control resume" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">Lastname</label>
+                                        <div class="form-button">
+                                            <input type="text" value="{{ can.lastname }}"  name="lastname" class="form-control resume" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">Job Name</label>
+                                        <div class="form-button">
+                                            <input type="text" name="jobname" value="{{ job.job_name }}"   placeholder="Job Name" class="form-control resume" >
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">City</label>
+                                        <input id="city" type="text" name="city"  class="form-control resume" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">State</label>
+                                        <div class="form-button">
+                                            <input type="text" name="state"  class="form-control resume" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">Education </label>
+                                        <div class="form-button">
+                                            <input type="text" name="education"  placeholder="ex: B-tech" class="form-control resume" >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">Year of Experience</label>
+                                        <div class="form-button">
+                                            <input type="text" name="experience"  class="form-control resume" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">Email Address</label>
+                                        <input id="email-address" value="{{ user.email }}" type="email" name="email" class="form-control resume"
+                                            >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">Phone Number</label>
+                                        <input id="number" type="text" name="phone"  class="form-control resume" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label mt-2">
+                                        <label class="text-muted">Gender</label>
+                                        <div class="form-button">
+                                            <input type="text" name="gender"  placeholder="ex: male or female" class="form-control resume" >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+
+                            
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item">
+                                            <div class="input-group mt-2 mb-2">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" name="resume"  id="inputGroupFile01"
+                                                        aria-describedby="inputGroupFileAddon01">
+                                                    <label class="custom-file-label rounded"><i
+                                                            class="mdi mdi-cloud-upload mr-1"></i> Upload Resume</label>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <h6 class="text-muted mb-0">Upload Resume.</h6>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12 mt-2">
+                                    <button type="submit" class="btn btn-primary">Apply</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- POST A JOB END -->
+
+<!-- subscribe start -->
+<section class="section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-5">
+                <div class="float-left position-relative notification-icon mr-2">
+                    <i class="mdi mdi-bell-outline text-primary"></i>
+                    <span class="badge badge-pill badge-danger">1</span>
+                </div>
+                <h5 class="mt-2 mb-0">Your Job Notification</h5>
+            </div>
+            <div class="col-lg-8 col-md-7 mt-4 mt-sm-0">
+                <form>
+                    <div class="form-group mb-0">
+                        <div class="input-group mb-0">
+                            <input name="email" id="email" type="email" class="form-control" placeholder="Your email :"
+                                required="" aria-describedby="newssubscribebtn">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary submitBnt" type="submit"
+                                    id="newssubscribebtn">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- subscribe end -->
+
+{% endblock body %}

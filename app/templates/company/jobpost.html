@@ -1,0 +1,97 @@
+{% extends 'company/base1.html' %}
+{% block body %}
+
+ 
+    <div class="container ">
+        
+        <div class="card o-hidden border-0 shadow-lg my-5 ">
+            
+            <div class="card-body ">
+                <!-- Nested Row within Card Body -->
+                
+                <div class="row ">
+                    
+                    
+                    <div class="col-lg-7 mx-auto">
+                        
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Job Post Form</h1>
+                                {% for message in messages %}
+                                <h5 class="text-{{ message.tags }}">{{ message }}</h5>
+                                {% endfor %}
+                            </div>
+                            <form class="user" method="post" action="/jobpost/{{ request.session.id }}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Job Name" name="jobname" required >
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Comapny Name" name="companyname" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Comapny Address" name="companyaddress" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Qualifications "  name="qualification" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Responsibilities "  name="responsibilities" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Location "  name="location" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Comapny Website "  name="companywebsite" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Comapny Email "  name="companyemail" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Comapny Contact"  name="companycontact" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Salary "  name="salary" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Experience "  name="experience" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Job Description"  name="jobdescription" ></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    Post Job
+                                </button>
+                                
+                                
+                            </form>
+                            
+                            
+                        </div>
+                    
+                    </div>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+
+    </div>
+
+
+{% endblock body %}   
